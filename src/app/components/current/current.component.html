@@ -1,0 +1,17 @@
+<div id="container">
+    <button id="return" routerLink="/library"><span><mat-icon>chevron_left</mat-icon></span></button>
+    <section id="title_section">
+        <h3>{{current_set.name}}</h3>
+        <h5>Current set</h5>
+    </section>
+    <section id="content_section">
+        <div id="front" class="card" >
+            <p>{{current_set.q1}}</p>
+        </div>
+        <div id="back" class="card" >
+            <p>{{current_set.a1}}</p>
+        </div>  
+    </section>
+    <button id="wrong"><mat-icon>close</mat-icon></button>
+    <button id="right"><mat-icon>done</mat-icon></button>
+</div>

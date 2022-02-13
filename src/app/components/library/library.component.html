@@ -1,0 +1,12 @@
+<div id="container">
+    <h3 id="title">Your sets</h3>
+    <div class="sets">
+        <div class="set" 
+        *ngFor="let set of set_data"
+        (click)="selectSet(set)">
+            <h3>{{set.name}}</h3>
+            <span class="favorite"><mat-icon>favorite</mat-icon></span>
+        </div>
+    </div> 
+    <button id="add_task"><mat-icon>add</mat-icon></button> 
+</div>
