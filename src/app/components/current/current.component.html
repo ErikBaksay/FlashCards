@@ -5,13 +5,16 @@
         <h5>Current set</h5>
     </section>
     <section id="content_section">
-        <div id="front" class="card" >
-            <p>{{current_set.q1}}</p>
+        <div id="front" class="card" *ngIf="!isCompleted">
+            <p>{{current_set.questions[current_question][0]}}</p>
         </div>
-        <div id="back" class="card" >
-            <p>{{current_set.a1}}</p>
+        <div id="back" class="card" *ngIf="!isCompleted">
+            <p>{{current_set.questions[current_question][1]}}</p>
+        </div>
+        <div *ngIf="isCompleted">
+            <h2>Completed</h2>
         </div>  
     </section>
-    <button id="wrong"><mat-icon>close</mat-icon></button>
-    <button id="right"><mat-icon>done</mat-icon></button>
+    <button id="wrong" (click)="questionFailed()" *ngIf="!isCompleted"><mat-icon>close</mat-icon></button>
+    <button id="right" (click)="questionPassed()" *ngIf="!isCompleted"><mat-icon>done</mat-icon></button>
 </div>
