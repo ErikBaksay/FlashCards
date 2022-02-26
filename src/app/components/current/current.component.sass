@@ -5,7 +5,6 @@
     grid-auto-flow: row
     grid-template-rows: 10vh 1fr
     #return
-        background: red
         position: absolute
         top: 2vh
         left: 30px
@@ -17,10 +16,14 @@
         align-items: center
         mat-icon
         font-size: 3em
+
+        animation: 0.8s cubic-bezier(0,1.05,.61,1) fadeIn
     #title_section
         text-align: center
         margin: 0
         align-self: center
+
+        animation: 0.8s cubic-bezier(0,1.05,.61,1) fadeIn
         h3
             margin: 0
             font-size: 1.4em
@@ -33,6 +36,8 @@
         flex-direction: column
         align-items: center
         height: 80vh
+
+        animation: 1.2s cubic-bezier(0,1.05,.61,1) fadeIn
         .card
             width: 35vh
             height: 35vh
@@ -54,6 +59,8 @@
         bottom: 30px
         left: 30px
         color: #DD3434
+
+        animation: 0.8s cubic-bezier(0,1.05,.61,1) fadeIn
     #right
         position: absolute
         height: 60px
@@ -61,6 +68,8 @@
         bottom: 30px
         right: 30px
         color: #3AD603
+
+        animation: 0.8s cubic-bezier(0,1.05,.61,1) fadeIn
 
 @media only screen and (min-width: 768px)
     .container
