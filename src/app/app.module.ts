@@ -8,13 +8,15 @@ import { LibraryComponent } from './components/library/library.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from "@angular/material/icon";
 import { CurrentComponent } from './components/current/current.component';
+import { SetCreatorComponent } from './components/set-creator/set-creator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LibraryComponent,
-    CurrentComponent
+    CurrentComponent,
+    SetCreatorComponent
   ],
   imports: [
     BrowserModule,

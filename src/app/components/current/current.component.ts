@@ -42,12 +42,21 @@ export class CurrentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem('storedSets') === null){
+      this.set_data = set_data
+    }
+    else{
+      this.set_data = JSON.parse(localStorage.getItem('storedSets')!)
+    }
+    
     let setID = parseInt(this.route.snapshot.paramMap.get("set")!)
-    for(let i = 0; i < set_data.length; i++){
-      if (set_data[i].id == setID){
-        this.current_set = set_data[i]
+    
+    for(let i = 0; i < this.set_data.length; i++){
+      if (this.set_data[i].id == setID){
+        this.current_set = this.set_data[i]
       }  
     } 
+
     this.generateQuestion()
   }
 }
