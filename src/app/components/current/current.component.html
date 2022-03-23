@@ -8,8 +8,9 @@
         <div id="front" class="card" *ngIf="!isCompleted">
             <p>{{current_set.questions[current_question][0]}}</p>
         </div>
-        <div id="back" class="card" *ngIf="!isCompleted">
-            <p>{{current_set.questions[current_question][1]}}</p>
+        <div id="back" class="card" *ngIf="!isCompleted" (click)="reveal()">
+            <p *ngIf="!isRevealed" class="tapToReveal">Tap to reveal</p>
+            <p *ngIf="isRevealed">{{current_set.questions[current_question][1]}}</p>
         </div>
         <div *ngIf="isCompleted">
             <h2>Completed</h2>

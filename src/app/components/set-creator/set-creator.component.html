@@ -1,10 +1,33 @@
-<button id="return" routerLink="/library"><span><mat-icon>chevron_left</mat-icon></span></button>
-<input type="text" placeholder="Set name" id="setName">
-<div class="question" *ngFor="let question of questions,let i = index">
-    <h1>Question {{i+1}}</h1>
-    <input type="text" placeholder="Question" id="question{{i}}" value="{{question[0]}}">
-    <input type="text" placeholder="Answer" id="answer{{i}}" value="{{question[1]}}">
-    <button (click)="removeQuestion(question)">Remove question</button>
+<div class="container">
+    <h3 id="title">Create a set</h3>
+    <button id="return" routerLink="/library">
+        <span><mat-icon>chevron_left</mat-icon></span>
+    </button>
+    <div id="questions">
+        <div id="setNameDiv">
+            <input type="text" placeholder="Set name" id="setName">
+        </div>
+        <div class="question" *ngFor="let question of questions,let i = index">
+            <div class="noncollapsible" (click)="collapsibleClicked(i)">
+                <h3>{{i+1}}. Question</h3>
+                <span>
+                    <mat-icon id="q{{i}}DropDownIcon">arrow_drop_down</mat-icon>
+                </span>
+            </div>
+            <div id="q{{i}}Collapsible" class="collapsible">
+                <input type="text" placeholder="Question" id="question{{i}}" value="{{question[0]}}">
+                <input type="text" placeholder="Answer" id="answer{{i}}" value="{{question[1]}}">
+                <button (click)="removeQuestion(question)">Remove</button>
+            </div>
+        </div>    
+    </div>
+    <button id="addQuestion" (click)="addQuestion()"><mat-icon>add</mat-icon></button>
+    <span id="save" (click)="saveSet()"><mat-icon>save</mat-icon></span>
 </div>
-<button (click)="addQuestion()">Add a question</button>
-<button (click)="saveSet()">Save</button>
+
+<div id="setCreatedPopUp" class="hidden">
+    <div id="popUp">
+        <p>Your set was created</p>
+        <button (click)="toggleSetCreatedPopUp()">Go back</button>
+    </div>
+</div>

@@ -39,12 +39,14 @@ export class LibraryComponent implements OnInit {
     }
   }
   removeSet(id:number){
-    for (let i = 0; i < this.set_data.length; i++){
-      if (this.set_data[i].id == id){
-        this.set_data.splice(i,1)
-      }
+    console.log(id)
+    let i = 0
+    while(this.set_data[i].id != id){
+      i++
     }
+    console.log(this.set_data[i]);
+    this.set_data.splice(i,1)
+    console.log(this.set_data);
     localStorage.setItem('storedSets',JSON.stringify(this.set_data))
   }
-
 }

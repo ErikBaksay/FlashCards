@@ -14,10 +14,12 @@ export class CurrentComponent implements OnInit {
   current_question : number = 0
   completed : number[] = []
   isCompleted : boolean = false
+  isRevealed : boolean = false
 
   constructor(private route: ActivatedRoute) { }
 
   generateQuestion(){
+    this.isRevealed = false
     if (this.completed.length == this.current_set.questions.length){
       this.isCompleted = true
       return
@@ -58,5 +60,11 @@ export class CurrentComponent implements OnInit {
     } 
 
     this.generateQuestion()
+  }
+
+  reveal(){
+    if (!this.isRevealed){
+      this.isRevealed = true
+    }
   }
 }
