@@ -1,35 +1,24 @@
 export var set_data = [
     {
         id: 1,
-        name: 'Flags',
+        name: 'Facts About the World',
         questions : [
-            ['flag1','answer1'],
-            ['flag2','answer2'],
-            ['flag3','answer3'],
-            ['flag4','answer4'],
-            ['flag5','answer5'],
+            ["What is the world's most populated country?",'China'],
+            ['The Great Barrier Reef is off the coast of which country?','Australia'],
+            ["In which country is the world's highest waterfall?",'Venezuela'],
+            ['In which country is Mount Fuji located?','Japan'],
+            ['In which country is the Cape of Good Hope?','South Africa'],
         ]
     },
     {
         id: 2,
-        name: 'US States',
-        questions : [
-            ['ustates1','answer1'],
-            ['ustates2','answer2'],
-            ['ustates3','answer3'],
-            ['ustates4','answer4'],
-            ['ustates5','answer5'],
-        ]
-    },
-    {
-        id: 3,
         name: 'Capitals',
         questions : [
-            ['capitals1','answer1'],
-            ['capitals2','answer2'],
-            ['capitals3','answer3'],
-            ['capitals4','answer4'],
-            ['capitals5','answer5'],
+            ['Greece','Athens'],
+            ['Thailand','Bangkok'],
+            ['China','Beijing'],
+            ['Serbia','Belgrade'],
+            ['Germany','Berlin'],
         ]
     }
 ]
