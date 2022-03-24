@@ -8,15 +8,29 @@
         </span>
     </button>
     <div class="sets">
-        <div class="set" 
-        *ngFor="let set of set_data"
+        <div class="set" id="set{{i}}"
+        *ngFor="let set of set_data,let i = index"
         (click)="selectSet(set)">
             <h3>{{set.name}}</h3>
-            <span>
-                <mat-icon *ngIf="removeActive" (click)="removeSet(set.id)">delete</mat-icon>
-                <mat-icon *ngIf="!removeActive" class="favorite">favorite</mat-icon>
-            </span>
+
+            <div (click)="removeSet(set.id)" *ngIf="removeActive">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </div>
+
+            <div (click)="favouriteSet(i,$event)" 
+                *ngIf="!removeActive">
+                <mat-icon  
+                    class="favorite" 
+                    [ngClass]="{'enabled':set.favourite}">
+                    favorite
+                </mat-icon>
+            </div>
+            
         </div>
     </div> 
-    <button id="add_task" routerLink="/set-creator"><mat-icon>add</mat-icon></button> 
+    <button id="add_task" routerLink="/set-creator">
+        <mat-icon>add</mat-icon>
+    </button> 
 </div>

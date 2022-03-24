@@ -60,6 +60,7 @@ export class SetCreatorComponent implements OnInit {
     this.set_data.push({
       id : setID,
       name : this.setNameValue,
+      favourite: false,
       questions : this.questions
     })
     

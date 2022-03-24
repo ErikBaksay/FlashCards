@@ -2,6 +2,7 @@ export var set_data = [
     {
         id: 1,
         name: 'Facts About the World',
+        favourite: false,
         questions : [
             ["What is the world's most populated country?",'China'],
             ['The Great Barrier Reef is off the coast of which country?','Australia'],
@@ -13,6 +14,7 @@ export var set_data = [
     {
         id: 2,
         name: 'Capitals',
+        favourite: false,
         questions : [
             ['Greece','Athens'],
             ['Thailand','Bangkok'],

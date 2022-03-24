@@ -39,14 +39,28 @@ export class LibraryComponent implements OnInit {
     }
   }
   removeSet(id:number){
-    console.log(id)
     let i = 0
     while(this.set_data[i].id != id){
       i++
     }
-    console.log(this.set_data[i]);
     this.set_data.splice(i,1)
-    console.log(this.set_data);
+    localStorage.setItem('storedSets',JSON.stringify(this.set_data))
+  }
+
+  favouriteSet(i : number,event:Event){
+    event.stopPropagation()
+    if (this.set_data[i].favourite){
+      this.set_data[i].favourite = false
+      let deletedObject = this.set_data[i]
+      this.set_data.splice(i,1)
+      this.set_data.push(deletedObject)
+    }
+    else{
+      this.set_data[i].favourite = true
+      let deletedObject = this.set_data[i]
+      this.set_data.splice(i,1)
+      this.set_data.unshift(deletedObject)
+    }
     localStorage.setItem('storedSets',JSON.stringify(this.set_data))
   }
 }
