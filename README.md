@@ -1,3 +1,8 @@
+An App used for creating your own Flash Cards for studying. It was created using Angular, HTML, CSS and TypeScript.
+
+You can view it here : https://erikbaksay.github.io/flash-cards/
+________________________________________________________________________
+
 # FlashCards
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
