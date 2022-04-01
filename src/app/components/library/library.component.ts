@@ -11,6 +11,7 @@ export class LibraryComponent implements OnInit {
 
   set_data = set_data
   removeActive = false
+  set_data_test = []
 
   constructor(private router: Router) { }
 
@@ -60,6 +61,49 @@ export class LibraryComponent implements OnInit {
       let deletedObject = this.set_data[i]
       this.set_data.splice(i,1)
       this.set_data.unshift(deletedObject)
+    }
+    localStorage.setItem('storedSets',JSON.stringify(this.set_data))
+  }
+  download(){
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+      encodeURIComponent(JSON.stringify(this.set_data)));
+    element.setAttribute('download', 'flashcards.txt');
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+  fileImported(event:any){
+    var file : File = event.target.files[0]
+    let test1 : any = []
+    file.text().then((response) => {test1 = response}).then(() => {this.saveImport(test1)})
+  }
+  saveImport(importData : any){
+    importData = JSON.parse(importData)
+    let usedIDs : number[] = []
+    this.set_data.forEach(element => {usedIDs.push(element.id)})
+    for (let i = 0; i < importData.length; i++){
+      let isSameName = false
+      for (let j = 0; j < this.set_data.length; j++){
+        if (importData[i].name == set_data[j].name){
+          isSameName = true
+          console.log('A set with this name already exists:', importData[i].name)
+        }
+      }
+      if ( (isSameName == false) && (usedIDs.includes(importData[i].id)) ){
+        let newID = 0
+        while (usedIDs.includes(newID)){
+          newID =+ 1
+        }
+        importData[i].id = newID
+      }
+      if (isSameName == false){
+        this.set_data.push(importData[i])
+      }
     }
     localStorage.setItem('storedSets',JSON.stringify(this.set_data))
   }

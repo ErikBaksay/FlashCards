@@ -1,4 +1,11 @@
 <div class="container">
+    <button id="download" (click)="download()">
+        <mat-icon>file_download</mat-icon>
+    </button>
+    <input type="file" name="importFile" id="importFile" (change)="fileImported($event)" requiredFileType="text/plain">
+    <label for="importFile" id="importFileLabel">
+        <mat-icon>file_upload</mat-icon>
+    </label>
     <h3 id="title">Your sets</h3>
     <button id="removeToggle"
         (click)="removeToggle()">

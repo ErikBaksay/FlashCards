@@ -41,6 +41,8 @@
         font-size: 3em
 
         animation: 4s cubic-bezier(0,1.05,.61,1) fadeIn
+    #save:hover
+        cursor: pointer
     #addQuestion
         width: 60px
         height: 60px
@@ -52,6 +54,9 @@
         color: #f5f5f5
 
         animation: 4s cubic-bezier(0,1.05,.61,1) fadeIn
+    #addQuestion:hover
+        background-color: #adadad
+        cursor: pointer
     #questions
         display: flex
         flex-direction: column
@@ -66,6 +71,8 @@
             border: none
             padding: 6px
             width: 90%
+        input:hover
+            background-color: #e5e1dd
         #setNameDiv
             height: fit-content
             width: 70%
@@ -125,6 +132,10 @@
                 animation: appear 0.2s forwards
             .collapsible.disappear
                 animation: disappear 0.2s ease-out
+        .noncollapsible:hover
+            background-color: #c9cccf
+            border-radius: 6px
+            cursor: pointer
 #setCreatedPopUp
     height: 100%
     width: 100%
