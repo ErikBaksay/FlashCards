@@ -9,10 +9,8 @@
     <h3 id="title">Your sets</h3>
     <button id="removeToggle"
         (click)="removeToggle()">
-        <span>
-            <mat-icon *ngIf="!removeActive">delete</mat-icon>
-            <mat-icon *ngIf="removeActive">favorite</mat-icon>
-        </span>
+        <mat-icon *ngIf="!removeActive">delete</mat-icon>
+        <mat-icon *ngIf="removeActive">favorite</mat-icon>
     </button>
     <div class="sets">
         <div class="set" id="set{{i}}"
