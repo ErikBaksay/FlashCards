@@ -14,10 +14,10 @@
         width: 6vh
         display: flex
         align-items: center
-        mat-icon
-        font-size: 3em
-
         animation: 0.8s cubic-bezier(0,1.05,.61,1) fadeIn
+        .mat-icon
+            font-size: 3em
+
     #title_section
         text-align: center
         margin: 0
@@ -60,6 +60,27 @@
             .tapToReveal
                 font-size: 0.9em
                 color: #858585
+        #completedContainer
+            justify-content: center
+            height: 100%
+            width: 100%
+            display: flex
+            align-items: center
+            #completedContent
+                display: flex
+                flex-direction: column
+                align-items: center
+                h2
+                    margin: 0
+                button
+                    min-height: 42px
+                    min-width: 42px
+                    width: 16vw
+                p
+                    text-align: center
+                    font-weight: 400
+                    color: #858585
+                    font-size: 0.83em
     #wrong
         position: absolute
         height: 60px

@@ -12,8 +12,12 @@
             <p *ngIf="!isRevealed" class="tapToReveal">Tap to reveal</p>
             <p *ngIf="isRevealed">{{current_set.questions[current_question][1]}}</p>
         </div>
-        <div *ngIf="isCompleted">
-            <h2>Completed</h2>
+        <div *ngIf="isCompleted" id="completedContainer">
+            <div id="completedContent">
+                <h2>Completed</h2>
+                <p>You've answered all questions correctly</p>
+                <button>Go back</button>
+            </div>
         </div>  
     </section>
     <button id="wrong" (click)="questionFailed()" *ngIf="!isCompleted"><mat-icon>close</mat-icon></button>

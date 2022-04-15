@@ -11,7 +11,7 @@
         align-self: center
         text-align: center
         font-weight: 700
-
+        z-index: 0
         animation: 4s cubic-bezier(0,1.05,.61,1) fadeIn
     #removeToggle
         position: absolute
@@ -24,6 +24,7 @@
         display: flex
         align-items: center
         font-size: 3em
+        z-index: 10
 
         animation: 4s cubic-bezier(0,1.05,.61,1) fadeIn
     #removeToggle:hover
@@ -41,6 +42,7 @@
         justify-content: center
         background: rgba(0, 0, 0, 0)
         box-shadow: none
+        z-index: 10
 
         animation: 4s cubic-bezier(0,1.05,.61,1) fadeIn
     #download:hover
@@ -53,6 +55,7 @@
         left: 90px
         height: 8vh
         width: 4vh
+        min-width: 42px
         display: flex
         align-items: center
         justify-content: center
@@ -61,6 +64,7 @@
         background: rgba(0, 0, 0, 0)
         box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15)
         box-shadow: none
+        z-index: 10
 
         animation: 4s cubic-bezier(0,1.05,.61,1) fadeIn
     #importFileLabel:hover
@@ -84,10 +88,11 @@
             box-shadow: 0 3px 6px 0 rgb(0 0 0 / 5%)
             border-radius: 6px
             animation: 1.2s cubic-bezier(0,1.05,.61,1) fadeInUp
-            span
-                margin: 0
-                padding: 2vh
-                line-height: 1em
+            .setRemoveFavorite
+                background-color: rgba(0, 0, 0, 0)
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)
+            .mat-icon
+                padding-top: 5px
             .favorite
                 color: #B8B8B8
             .favorite.enabled

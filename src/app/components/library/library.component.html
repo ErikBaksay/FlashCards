@@ -20,20 +20,23 @@
         (click)="selectSet(set)">
             <h3>{{set.name}}</h3>
 
-            <div (click)="removeSet(set.id)" *ngIf="removeActive">
+            <button class="setRemoveFavorite" 
+                (click)="removeSet(set.id)" 
+                *ngIf="removeActive">
                 <mat-icon>
                     delete
                 </mat-icon>
-            </div>
+            </button>
 
-            <div (click)="favouriteSet(i,$event)" 
+            <button class="setRemoveFavorite" 
+                (click)="favouriteSet(i,$event)" 
                 *ngIf="!removeActive">
-                <mat-icon  
+                <mat-icon 
                     class="favorite" 
                     [ngClass]="{'enabled':set.favourite}">
                     favorite
                 </mat-icon>
-            </div>
+            </button>
             
         </div>
     </div> 
